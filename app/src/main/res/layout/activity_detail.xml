@@ -12,4 +12,75 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/detail_player_view"/>
 
+    <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@+id/detail_player_view"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:padding="10dp"
+       android:id="@+id/switchll"
+       android:orientation="horizontal">
+       <androidx.appcompat.widget.SwitchCompat
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="字幕"
+           android:id="@+id/zimu"
+           android:layout_marginRight="10dp"/>
+       <androidx.appcompat.widget.SwitchCompat
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="弹幕"
+           android:id="@+id/danmu"/>
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/switchll"
+        android:orientation="horizontal"
+        android:id="@+id/radiogroup1"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清晰度"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="480p"
+            android:id="@+id/f"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="720p"
+            android:id="@+id/fa"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1080p"
+            android:id="@+id/d"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup1"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放模式"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="循环播放"
+            android:id="@+id/k"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播完停止"
+            android:id="@+id/a"/>
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
