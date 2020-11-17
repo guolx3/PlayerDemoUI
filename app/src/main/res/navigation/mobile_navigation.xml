@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_live"/>
 
     <fragment
-        android:id="@+id/navigation_video_hall"
-        android:name="com.study.playerdemoui.ui.videohall.VideoHallFragment"
-        android:label="@string/nav_title_video_hall"
-        tools:layout="@layout/fragment_video_hall"/>
+        android:id="@+id/navigation_music"
+        android:name="com.study.playerdemoui.ui.music.MusicFragment"
+        android:label="@string/nav_title_music"
+        tools:layout="@layout/fragment_music"/>
 
     <fragment
         android:id="@+id/navigation_local_video"

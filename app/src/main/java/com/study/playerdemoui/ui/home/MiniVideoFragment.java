@@ -1,27 +1,21 @@
-package com.study.playerdemoui.ui.live;
+package com.study.playerdemoui.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 
 import com.study.playerdemoui.R;
 
-public class LiveFragment extends Fragment {
+public class MiniVideoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_live, container, false);
-        final TextView textView = root.findViewById(R.id.tv_live);
-        String text = "hello live Fragment!";
-        textView.setText(text);
-        return root;
+        return inflater.inflate(R.layout.fragment_home_mini_video, container, false);
     }
 }

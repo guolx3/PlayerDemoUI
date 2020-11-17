@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="decode_mode_entries">
+        <item>硬解优先</item>
+        <item>软解优先</item>
+        <item>仅使用硬解</item>
+        <item>仅使用软解</item>
+    </string-array>
+
+    <string-array name="decode_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

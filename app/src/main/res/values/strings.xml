@@ -2,6 +2,32 @@
     <string name="app_name">PlayerDemoUI</string>
     <string name="nav_title_home">主页</string>
     <string name="nav_title_live">直播</string>
-    <string name="nav_title_video_hall">放映厅</string>
+    <string name="nav_title_music">音乐</string>
     <string name="nav_title_local">本地</string>
+
+    <string name="tab_title_short_video">短视频</string>
+    <string name="tab_title_mini_video">小视频</string>
+
+    <string name="menu_title_settings">设置</string>
+
+    <string name="preference_title_version">版本号</string>
+
+    <string name="preference_category_title_base_setting">基本设置</string>
+    <string name="preference_title_ifbuffer">使用缓存</string>
+    <string name="preference_title_multiprocess">多进程</string>
+    <string name="preference_title_multiinstance">多实例</string>
+    <string name="preference_title_decode_mode">解码模式</string>
+
+    <string name="preference_category_title_developer_setting">开发者选项</string>
+    <string name="preference_title_check_log">查看日志</string>
+    <string name="preference_title_performance_observe">性能监控</string>
+    <string name="preference_title_performance_statistics">性能统计</string>
+    <string name="preference_title_io_observe">io监控</string>
+
+    <string name="preference_summary_off_multiinstance">使用单实例播放</string>
+    <string name="preference_summary_on_multiinstance">使用多实例播放</string>
+    <string name="preference_summary_off_multiprocess">使用单进程播放</string>
+    <string name="preference_summary_on_multiprocess">使用多进程播放</string>
+
+    <string name="speed_button_1x">1x</string>
 </resources>

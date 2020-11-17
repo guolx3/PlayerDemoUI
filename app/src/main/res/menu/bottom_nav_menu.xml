@@ -11,12 +11,12 @@
         android:title="@string/nav_title_live"/>
 
     <item
-        android:id="@+id/navigation_video_hall"
-        android:icon="@drawable/ic_baseline_tv_24"
-        android:title="@string/nav_title_video_hall"/>
+        android:id="@+id/navigation_music"
+        android:icon="@drawable/ic_baseline_audiotrack_24"
+        android:title="@string/nav_title_music"/>
 
     <item
         android:id="@+id/navigation_local_video"
-        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:icon="@drawable/ic_baseline_local_movies_24"
         android:title="@string/nav_title_local"/>
 </menu>

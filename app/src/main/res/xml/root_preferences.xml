@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        app:title="@string/preference_title_version"
+        app:key="version"
+        app:summary="0.0.1"/>
+
+    <PreferenceCategory android:title="@string/preference_category_title_base_setting"
+        android:icon="@drawable/ic_baseline_settings_24">
+        <SwitchPreferenceCompat
+            app:title="@string/preference_title_ifbuffer"
+            app:key="ifbuffer"/>
+
+        <SwitchPreferenceCompat
+            app:title="@string/preference_title_multiprocess"
+            android:summaryOff="@string/preference_summary_off_multiprocess"
+            android:summaryOn="@string/preference_summary_on_multiprocess"
+            app:key="multiprocess"/>
+
+        <SwitchPreferenceCompat
+            app:title="@string/preference_title_multiinstance"
+            android:summaryOff="@string/preference_summary_off_multiinstance"
+            android:summaryOn="@string/preference_summary_on_multiinstance"
+            app:key="multiinstance"/>
+
+        <ListPreference
+            app:title="@string/preference_title_decode_mode"
+            app:key="decode_mode"
+            android:entries="@array/decode_mode_entries"
+            android:entryValues="@array/decode_mode_values"
+            android:defaultValue="0"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/preference_category_title_developer_setting"
+        android:icon="@drawable/ic_baseline_code_24">
+        <Preference
+            app:title="@string/preference_title_check_log"
+            app:key="check_log"/>
+        <Preference
+            app:title="@string/preference_title_performance_observe"
+            app:key="performance_observe"/>
+        <Preference
+            app:title="@string/preference_title_performance_statistics"
+            app:key="performance_statistics"/>
+        <Preference
+            app:title="@string/preference_title_io_observe"
+            app:key="io_observe"/>
+    </PreferenceCategory>
+</PreferenceScreen>
