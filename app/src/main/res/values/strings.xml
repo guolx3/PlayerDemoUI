@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PlayerDemoUI</string>
+    <string name="nav_title_home">主页</string>
+    <string name="nav_title_live">直播</string>
+    <string name="nav_title_video_hall">放映厅</string>
+    <string name="nav_title_local">本地</string>
+</resources>
