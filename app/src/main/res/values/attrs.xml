@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PlayerView">
+        <attr name="showBottomController" format="boolean"/>
+        <attr name="showScreenshotButton" format="boolean"/>
+        <attr name="showSettingButton" format="boolean"/>
+    </declare-styleable>
+</resources>

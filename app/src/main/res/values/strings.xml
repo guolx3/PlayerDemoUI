@@ -5,6 +5,9 @@
     <string name="nav_title_music">音乐</string>
     <string name="nav_title_local">本地</string>
 
+    <string name="activity_setting_title">设置</string>
+    <string name="activity_detail_title">详情页</string>
+
     <string name="tab_title_short_video">短视频</string>
     <string name="tab_title_mini_video">小视频</string>
 
@@ -29,5 +32,37 @@
     <string name="preference_summary_off_multiprocess">使用单进程播放</string>
     <string name="preference_summary_on_multiprocess">使用多进程播放</string>
 
-    <string name="speed_button_1x">1x</string>
+    <string name="text_subtitle">字幕</string>
+    <string name="text_bullet_subtitles">弹幕</string>
+    <string name="text_fade_in_fade_out">音频淡入淡出</string>
+
+    <string name="text_play_speed">倍速播放</string>
+    <string name="text_play_speed_0.5x">0.5x</string>
+    <string name="text_play_speed_1x">1x</string>
+    <string name="text_play_speed_2x">2x</string>
+    <string name="text_play_speed_4x">4x</string>
+
+    <string name="text_resolution">分辨率</string>
+    <string name="text_resolution_480">480p</string>
+    <string name="text_resolution_720">720p</string>
+    <string name="text_resolution_1080">1080p</string>
+    <string name="text_resolution_4k">4k</string>
+
+    <string name="text_fps">帧率</string>
+    <string name="text_fps_30">30</string>
+    <string name="text_fps_60">60</string>
+
+    <string name="text_play_mode">播放模式</string>
+    <string name="text_play_mode_normal">播完暂停</string>
+    <string name="text_play_mode_looping">循环播放</string>
+    
+    <string name="text_decode_mode">解码模式</string>
+    <string name="text_decode_mode_self_adaption">自适应</string>
+    <string name="text_decode_mode_hard_first">硬解优先</string>
+    <string name="text_decode_mode_soft_first">软解优先</string>
+    
+    <string name="text_denoise">降噪</string>
+    
+    <string name="text_voice_change">变声变调</string>
+    <string name="text_equilizer">均衡器</string>
 </resources>

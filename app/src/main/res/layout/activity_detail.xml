@@ -8,79 +8,203 @@
 
     <com.study.playerdemoui.player.PlayerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="16:9"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/detail_player_view"/>
 
     <LinearLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       app:layout_constraintTop_toBottomOf="@+id/detail_player_view"
-       app:layout_constraintLeft_toLeftOf="parent"
-       android:padding="10dp"
-       android:id="@+id/switchll"
-       android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/detail_player_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:id="@+id/ll_switch"
+        android:orientation="horizontal">
        <androidx.appcompat.widget.SwitchCompat
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="字幕"
-           android:id="@+id/zimu"
-           android:layout_marginRight="10dp"/>
+           android:text="@string/text_subtitle"
+           android:id="@+id/subtitle"
+           android:layout_marginRight="10dp"
+           android:layout_marginEnd="10dp" />
        <androidx.appcompat.widget.SwitchCompat
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="弹幕"
-           android:id="@+id/danmu"/>
+           android:text="@string/text_bullet_subtitles"
+           android:layout_marginRight="10dp"
+           android:id="@+id/bullet_subtitles"
+           android:layout_marginEnd="10dp" />
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_fade_in_fade_out"
+            android:id="@+id/fade_in_fade_out"/>
     </LinearLayout>
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/switchll"
+        app:layout_constraintTop_toBottomOf="@+id/ll_switch"
         android:orientation="horizontal"
-        android:id="@+id/radiogroup1"
-        android:padding="10dp">
+        android:id="@+id/radio_group_play_speed"
+        android:checkedButton="@id/play_speed_1x"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="清晰度"/>
+            android:text="@string/text_play_speed"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="480p"
-            android:id="@+id/f"/>
+            android:text="@string/text_play_speed_0.5x"
+            android:id="@+id/play_speed_0.5x"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="720p"
-            android:id="@+id/fa"/>
+            android:text="@string/text_play_speed_1x"
+            android:id="@+id/play_speed_1x"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1080p"
-            android:id="@+id/d"/>
+            android:text="@string/text_play_speed_2x"
+            android:id="@+id/play_speed_2x"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_play_speed_4x"
+            android:id="@+id/play_speed_4x"/>
     </RadioGroup>
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/radiogroup1"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_play_speed"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:id="@+id/radio_group_resolution"
+        android:checkedButton="@id/resolution_self_adaption"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="播放模式"/>
+            android:text="@string/text_resolution"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="循环播放"
-            android:id="@+id/k"/>
+            android:text="@string/text_decode_mode_self_adaption"
+            android:id="@+id/resolution_self_adaption"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="播完停止"
-            android:id="@+id/a"/>
+            android:text="@string/text_resolution_720"
+            android:id="@+id/resolution_720"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_resolution_1080"
+            android:id="@+id/resolution_1080"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_resolution_4k"
+            android:id="@+id/resolution_4k"/>
     </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_resolution"
+        android:orientation="horizontal"
+        android:id="@+id/radio_group_fps"
+        android:checkedButton="@id/fps_30"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_fps"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_fps_30"
+            android:id="@+id/fps_30"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_fps_60"
+            android:id="@+id/fps_60"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_fps"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:checkedButton="@id/play_mode_normal"
+        android:id="@+id/radio_group_play_mode">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_play_mode"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_play_mode_looping"
+            android:id="@+id/play_mode_looping"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_play_mode_normal"
+            android:id="@+id/play_mode_normal"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_play_mode"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:checkedButton="@id/decode_mode_self_adaption"
+        android:id="@+id/radio_group_decode_mode">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_decode_mode"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_decode_mode_self_adaption"
+            android:id="@+id/decode_mode_self_adaption"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_decode_mode_hard_first"
+            android:id="@+id/decode_mode_hard_first"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_decode_mode_soft_first"
+            android:id="@+id/decode_mode_soft_first"/>
+    </RadioGroup>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

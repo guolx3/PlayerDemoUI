@@ -20,9 +20,6 @@ public class MusicFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_music, container, false);
-        TextView textView = root.findViewById(R.id.tv_video_hall);
-        String text = "hello music fragment";
-        textView.setText(text);
         return root;
     }
 }

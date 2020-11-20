@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.study.playerdemoui.GridSpaceItemDecoration;
 import com.study.playerdemoui.R;
 import com.study.playerdemoui.adapter.MediaAdapter;
 
@@ -32,10 +33,9 @@ public class ShortVideoFragment extends Fragment implements RecyclerView.Recycle
 
         recyclerView = view.findViewById(R.id.recycler_view_short_video);
         recyclerView.setHasFixedSize(true);
-        recyclerView.addItemDecoration(new DividerItemDecoration(requireContext(),
-                DividerItemDecoration.VERTICAL));
+        recyclerView.addItemDecoration(new GridSpaceItemDecoration(1, 10,0));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mediaAdapter = new MediaAdapter(texts);
+        mediaAdapter = new MediaAdapter(texts, R.layout.video_item);
         recyclerView.setAdapter(mediaAdapter);
         recyclerView.setRecyclerListener(this);
         return view;

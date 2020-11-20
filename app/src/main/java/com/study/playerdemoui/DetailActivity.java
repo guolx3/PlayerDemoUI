@@ -1,5 +1,6 @@
 package com.study.playerdemoui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -15,6 +16,15 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         playerView = findViewById(R.id.detail_player_view);
-        playerView.setText((String)getIntent().getExtras().get("text"));
+        playerView.setText((String) getIntent().getExtras().get("text"));
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(R.string.activity_detail_title);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+
+
     }
 }
