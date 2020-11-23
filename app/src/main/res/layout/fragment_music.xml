@@ -5,166 +5,81 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textAlignment="center"
-        android:background="#E3E1E1"
-        android:text="audio wave"
-        android:id="@+id/audio_wave"
-        android:gravity="center" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/audio_wave"
-        android:text="music info"
-        android:id="@+id/music_info"/>
+        android:layout_marginTop="10dp"
+        android:id="@+id/card_view_lyric">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="lyric"
+            android:gravity="center"/>
+    </androidx.cardview.widget.CardView>
+
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/music_info"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_lyric"
+        android:layout_marginTop="10dp"
         android:id="@+id/music_seek_bar"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/music_seek_bar"
-        app:layout_constraintLeft_toLeftOf="@+id/music_seek_bar"
-        android:text="00:00"
-        android:id="@+id/music_current_time"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/music_seek_bar"
-        app:layout_constraintRight_toRightOf="@+id/music_seek_bar"
-        android:text="00:00"
-        android:id="@+id/music_end_time"/>
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/music_seek_bar"
-        android:gravity="center"
-        android:id="@+id/music_button">
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_music_control_button">
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/music_pre_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/ic_baseline_format_list_bulleted_24"
+            android:id="@+id/music_list_button"/>
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintLeft_toRightOf="@id/music_list_button"
+            app:layout_constraintRight_toLeftOf="@+id/music_play_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/ic_baseline_skip_previous_24"
-            android:id="@+id/pre_button"/>
+            android:id="@+id/music_pre_button"/>
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintLeft_toRightOf="@+id/music_pre_button"
+            app:layout_constraintRight_toLeftOf="@+id/music_next_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/ic_baseline_play_circle_filled_24"
             android:id="@+id/music_play_button"/>
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintLeft_toRightOf="@+id/music_play_button"
+            app:layout_constraintRight_toLeftOf="@+id/music_more_feature_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/ic_baseline_skip_next_24"
-            android:id="@+id/next_button"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/music_button"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"
-        android:paddingRight="10dp"
-        android:paddingEnd="10dp"
-        android:id="@+id/ll_music_switch"
-        android:orientation="horizontal">
-        <androidx.appcompat.widget.SwitchCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_denoise"
-            android:id="@+id/denoise"
-            android:layout_marginRight="10dp"
-            android:layout_marginEnd="10dp" />
-        <androidx.appcompat.widget.SwitchCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_fade_in_fade_out"
-            android:id="@+id/fade_in_fade_out"/>
-    </LinearLayout>
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/ll_music_switch"
-        android:orientation="horizontal"
-        android:id="@+id/radio_group_voice_change"
-        android:checkedButton="@id/fps_30"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"
-        android:paddingRight="10dp"
-        android:paddingEnd="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_voice_change"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="type1"
-            android:id="@+id/voice_type_1"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="type2"
-            android:id="@+id/voice_type_2"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="type3"
-            android:id="@+id/voice_type_3"/>
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_equilizer"
-        app:layout_constraintTop_toBottomOf="@+id/radio_group_voice_change"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"
-        android:paddingRight="10dp"
-        android:paddingEnd="10dp"
-        android:id="@+id/equilizer_text"/>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/equilizer_text"
-       app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="2dp"
-        android:id="@+id/equilizer">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:paddingLeft="10dp"
-            android:paddingStart="10dp"
-            android:paddingRight="10dp"
-            android:paddingEnd="10dp"
-            android:id="@+id/equilizer_bar"
-            android:orientation="vertical">
-
-            <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+            android:id="@+id/music_next_button"/>
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintLeft_toRightOf="@+id/music_next_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/ic_baseline_more_vert_24"
+            android:id="@+id/music_more_feature_button"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

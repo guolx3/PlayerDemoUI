@@ -1,17 +1,19 @@
 package com.study.playerdemoui.player;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Point;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -30,13 +32,17 @@ public class PlayerView extends ConstraintLayout {
     private boolean showBottomController;
     private boolean showScreenshotButton;
     private boolean showSettingButton;
+    private int videoOrientation;
+    private final static int VIDEO_HORIZONTAL = 0;
+    private final static int VIDEO_VERTICAL = 1;
 
     private Context mContext;
     private TextView tv;
     private ImageButton playButton;
     private ImageButton settingButton;
-    private ConstraintLayout controllerBottom;
+    private ConstraintLayout bottomController;
     private ImageButton screenShotButton;
+    private ImageButton fullScreenButton;
 
     // operator
     private final int VERTICAL = 3;
@@ -88,6 +94,7 @@ public class PlayerView extends ConstraintLayout {
         showBottomController = typedArray.getBoolean(R.styleable.PlayerView_showBottomController, true);
         showScreenshotButton = typedArray.getBoolean(R.styleable.PlayerView_showScreenshotButton, true);
         showSettingButton = typedArray.getBoolean(R.styleable.PlayerView_showSettingButton, true);
+        videoOrientation = typedArray.getInt(R.styleable.PlayerView_videoOrientation, 0);
         init(context);
     }
 
@@ -105,9 +112,9 @@ public class PlayerView extends ConstraintLayout {
         if(!showScreenshotButton){
             screenShotButton.setVisibility(INVISIBLE);
         }
-        controllerBottom = view.findViewById(R.id.controller_bottom);
-        if(!showScreenshotButton){
-            controllerBottom.setVisibility(INVISIBLE);
+        bottomController = view.findViewById(R.id.controller_bottom);
+        if(!showBottomController){
+            bottomController.setVisibility(INVISIBLE);
         }
         volumeController = view.findViewById(R.id.volume_controller);
         volumeSeekBar = view.findViewById(R.id.volume_seek_bar);
@@ -219,5 +226,42 @@ public class PlayerView extends ConstraintLayout {
                 break;
         }
         return true;
+    }
+
+    private Activity scanForActivity(Context context){
+        if(context == null) return null;
+        if(context instanceof Activity){
+            return (Activity) context;
+        }else if(context instanceof ContextWrapper){
+            return scanForActivity(((ContextWrapper) context).getBaseContext());
+        }
+        return null;
+    }
+
+    private void hideSystemUI(Activity activity) {
+        // Enables regular immersive mode.
+        // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
+        // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        View decorView = activity.getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        // Set the content to appear under the system bars so that the
+                        // content doesn't resize when the system bars hide and show.
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        // Hide the nav bar and status bar
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
+
+    // Shows the system bars by removing all the flags
+    // except for the ones that make the content appear under the system bars.
+    private void showSystemUI(Activity activity) {
+        View decorView = activity.getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 }

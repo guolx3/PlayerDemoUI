@@ -13,5 +13,6 @@
         app:showBottomController="false"
         app:showScreenshotButton="false"
         app:showSettingButton="false"
+        app:videoOrientation="vertical"
         android:id="@+id/player_view"/>
 </androidx.cardview.widget.CardView>

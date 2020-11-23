@@ -4,5 +4,9 @@
         <attr name="showBottomController" format="boolean"/>
         <attr name="showScreenshotButton" format="boolean"/>
         <attr name="showSettingButton" format="boolean"/>
+        <attr name="videoOrientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
     </declare-styleable>
 </resources>
